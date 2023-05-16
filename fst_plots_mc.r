@@ -87,7 +87,7 @@ fst_plots_mc <- function (pFst, pS)
     cat(paste0("geographic and pairwise fst heatmap drawn!", 
         "\n"))
     
-    genetic_d <- as.matrix(pFst$Fst)
+    genetic_d <- as.matrix(as.dist(pFst$Fst))
     write.csv(genetic_d, "Rmaiden_pairwisefst.csv") 
 
     #genetic_d <- pFst$Fst
