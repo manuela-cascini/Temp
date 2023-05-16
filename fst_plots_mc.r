@@ -88,10 +88,10 @@ fst_plots_mc <- function (pFst, pS)
         "\n"))
     
     genetic_d <- as.matrix(as.dist(pFst$Fst))
-    write.table(genetic_d, "paste0(fst_dir, "/", species, " fst matrix.csv"), sep = ",")") 
-
+    write.table(genetic_d, paste0(fst_dir, "/", species, " fst matrix.csv"), 
+        sep = ",")
     #genetic_d <- pFst$Fst
-    #write.table(genetic_d, paste0(fst_dir, "/", species, " fst matrix.csv"), 
+    #write.table(genetic_d, paste0(fst_dir, "/", species, "fst matrix.csv"), 
      #   sep = ",")
     geo_d <- pS$S
     geo_d[upper.tri(geo_d)] <- geo_d[lower.tri(geo_d)]
