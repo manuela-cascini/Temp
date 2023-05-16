@@ -1,4 +1,4 @@
-function (pFst, pS) 
+fst_plots_mc <- function (pFst, pS) 
 {
     outputloc <- paste0(RandRbase, species, "/output_", analysis, 
         "/")
