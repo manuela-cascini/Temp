@@ -86,12 +86,9 @@ fst_plots_mc <- function (pFst, pS)
         width = 8, height = 9, dpi = 300, units = "in", device = "tiff")
     cat(paste0("geographic and pairwise fst heatmap drawn!", 
         "\n"))
-    
-    genetic_d <- as.matrix(as.dist(pFst$Fst))
-    write.csv(genetic_d, "fst matrix.csv"))
-    #genetic_d <- pFst$Fst
-    #write.table(genetic_d, paste0(fst_dir, "/", species, "fst matrix.csv"), 
-     #   sep = ",")
+    genetic_d <- pFst$Fst
+    write.table(genetic_d, paste0(fst_dir, "/", species, "fst matrix.csv"), 
+    sep = ",", row.names=FALSE)
     geo_d <- pS$S
     geo_d[upper.tri(geo_d)] <- geo_d[lower.tri(geo_d)]
     new <- matrix(NA, nrow = dim(geo_d)[1], ncol = dim(geo_d)[2])
